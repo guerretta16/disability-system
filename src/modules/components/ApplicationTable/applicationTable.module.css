@@ -1,0 +1,134 @@
+.tableContainer{
+  overflow-x: auto;
+}
+
+.table {
+  border-collapse: collapse;
+  border: none;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.tableRowHeader {
+  background-color: transparent;
+  transition: all 0.25s ease;
+}
+
+.tableHeader {
+  background-color: #f1f1f1;
+  padding: 12px;
+  font-weight: 500;
+  text-align: left;
+  font-size: 13px;
+  color: #2c3e50;
+}
+
+.tableRowItems {
+  cursor: auto;
+}
+
+.tableRowItems:nth-child(odd) {
+  background-color: #ecebeb;
+}
+
+.tableCell {
+  padding: 12px;
+  font-size: 12px;
+  color: #555555;
+}
+
+.tableTop{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.topInfo{
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.dateFilter{
+  display: flex;
+  gap: 5px;
+}
+
+.label{
+  display: block;
+  font-size: 12px;
+}
+
+.input[type=text]{
+  width: 100%;
+}
+
+.button{
+  cursor: pointer;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #5d8586;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.button:hover{
+  background-color: #85c6c7;
+}
+
+.input{
+  border: none;
+  outline: none;
+  background-color: #f1f1f1;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.tableButton{
+  cursor: pointer;
+  border: none;
+  background-color: #d43a1f;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.tableButton:hover{
+  background-color: #a52c17;
+}
+
+@media screen and (max-width: 895px){
+  .topInfo{
+    flex-direction: column;
+    align-items: end;
+  }
+  .input[type=text]{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .tableTop{
+    flex-direction: column;
+    padding: 20px;
+  }
+  .topInfo{
+    align-items: center;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,35 @@
+.header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #5d8586;
+    color: #fff;
+    padding: 10px;
+}
+
+.logout{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 5px;
+}
+
+.userName{
+    border-bottom: 1px #fff solid;
+}
+
+.button{
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #5d8586;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.button:hover{
+    background-color: #374f50;
+    color: #fff;
+}

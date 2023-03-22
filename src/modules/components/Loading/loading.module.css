@@ -1,0 +1,13 @@
+.container{
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-height: 700px) {
+    .container{
+        min-height: 60vh;
+    }
+}
