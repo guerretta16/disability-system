@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useUserStore from '../../hooks/userStoreHook';
-import styles from './loginPage.module.css';
 import { LoginForm } from '../../modules/components/LoginForm';
+import styles from './loginPage.module.css';
 
 const LoginPage = () => {
 

@@ -152,7 +152,7 @@ const ApplicationForm = ({createAppMutate}: Props) => {
             className={styles.input}
             type="number"
             placeholder="Coverage days"
-            {...register("coverageDays", { required: true })}
+            {...register("coverageDays", { required: true, validate: (value) => (parseInt(value) > 0) })}
           />
           {errors.coverageDays && (
             <span className={styles.error}>Coverage days are required</span>

@@ -11,8 +11,8 @@ import {
 import Swal from "sweetalert2";
 import { ApplicationForm } from "../ApplicationForm";
 import { Modal } from "../Modal";
-import { Loading } from "../Loading";
 import { motion } from "framer-motion";
+import { Loading } from "../Loading";
 
 const ApplicationTable = ({
   data,
@@ -64,8 +64,8 @@ const ApplicationTable = ({
     return results;
   };
 
-  const deleteAlert = (name: string, applicationId: string) =>
-    Swal.fire({
+  const deleteAlert = (name: string, applicationId: string) => {
+     Swal.fire({
       title: `Do you want to delete the application: ${name}?`,
       showCancelButton: true,
       confirmButtonText: "Delete",
@@ -75,6 +75,7 @@ const ApplicationTable = ({
         Swal.fire("Delete!", "", "success");
       }
     });
+  }
 
   const handleCloseModal = () => setIsOpen(false);
 
@@ -82,10 +83,6 @@ const ApplicationTable = ({
     mutateOnCreate.mutate(formData);
     setIsOpen(false);
   };
-
-  if (mutateOnCreate.isLoading || mutateOnDelete.isLoading) {
-    return <Loading />;
-  }
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>

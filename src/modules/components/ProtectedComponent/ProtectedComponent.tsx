@@ -4,6 +4,7 @@ import { EmployeePage } from "../../../pages/EmployeePage";
 import { HrSpecialistPage } from "../../../pages/HrSpecialistPage";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from 'react-toastify';
+
 import {
   getAllAplications,
   getAllAplicationsByEmployee,
@@ -15,6 +16,7 @@ import { ApplicationValues } from "../../../interfaces/types";
 const ProtectedComponent = () => {
   const { userInfo } = useUserStore();
   const queryClient = useQueryClient();
+  const notify = () => {toast.success("Application created!", {autoClose: 2000});}
 
   const getQueryApplication = () => {
     if (userInfo !== null) {
@@ -32,15 +34,15 @@ const ProtectedComponent = () => {
   const mutateOnDelete = useMutation({
     mutationFn: (applicationId: string) => deleteApplication(applicationId),
     onSuccess: () => {
-      queryClient.invalidateQueries(["applicationData"]);
+      queryClient.invalidateQueries({queryKey: ["applicationData"]});
     },
   });
 
   const mutateOnCreate = useMutation({
     mutationFn: (formData: ApplicationValues) => createApplication(formData),
     onSuccess: () => {
-      queryClient.invalidateQueries(["applicationData"]);
-      toast.success("Application created!", {position:"top-right"});
+      queryClient.invalidateQueries({queryKey: ["applicationData"]});
+      notify();
     },
   });
 
